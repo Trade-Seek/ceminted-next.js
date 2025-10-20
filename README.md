@@ -21,9 +21,7 @@ ceminted-next.js/
 ├── app/
 │   ├── api/
 │   │   └── waitlist/
-│   │       ├── route.ts          # POST endpoint for email submissions
-│   │       └── stats/
-│   │           └── route.ts      # GET endpoint for statistics
+│   │       └── route.ts          # POST endpoint for email submissions
 │   ├── layout.tsx                # Root layout with metadata
 │   ├── page.tsx                  # Home page
 │   └── globals.css               # Global styles
@@ -139,25 +137,6 @@ Add email to waitlist
 - `429` - Too many requests (rate limited)
 - `500` - Server error
 
-### GET `/api/waitlist/stats`
-
-Get waitlist statistics
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "data": {
-    "stats": {
-      "total": 150,
-      "pending": 150,
-      "recent": 5
-    }
-  }
-}
-```
-
 ## 🛠️ Built With
 
 | Technology | Version | Purpose         |
@@ -265,9 +244,6 @@ Test the API locally:
 curl -X POST http://localhost:3000/api/waitlist \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com"}'
-
-# Test stats endpoint
-curl http://localhost:3000/api/waitlist/stats
 ```
 
 ## 🐛 Troubleshooting

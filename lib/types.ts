@@ -21,20 +21,3 @@ export interface ApiResponse<T = any> {
     error?: string;
 }
 
-export interface WaitlistStats {
-    total: number;
-    pending: number;
-    recent: number;
-}
-
-// Form types
-export interface WaitlistFormData {
-    email: string;
-}
-
-// Component props
-export interface WaitlistFormProps {
-    onSuccess?: () => void;
-    onError?: (error: string) => void;
-}
-

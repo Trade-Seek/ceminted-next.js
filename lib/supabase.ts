@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { WaitlistEmail, WaitlistStats } from './types';
+import { WaitlistEmail } from './types';
 
 const supabaseUrl = process.env.SUPABASE_URL!;
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY!;
@@ -51,28 +51,5 @@ export async function addToWaitlist(
     }
 
     return data as WaitlistEmail;
-}
-
-/**
- * Get waitlist statistics
- */
-export async function getWaitlistStats(): Promise<WaitlistStats> {
-    const { data, error } = await supabase
-        .from('waitlist_emails')
-        .select('id, created_at, status');
-
-    if (error) {
-        throw error;
-    }
-
-    const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
-
-    return {
-        total: data.length,
-        pending: data.filter((item) => item.status === 'pending').length,
-        recent: data.filter(
-            (item) => new Date(item.created_at) > dayAgo
-        ).length,
-    };
 }
 
