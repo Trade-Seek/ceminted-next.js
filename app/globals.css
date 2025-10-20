@@ -52,15 +52,7 @@ html,body{
 
 /* Header section with LAUNCHING SOON */
 .header-section {
-  margin-bottom: 24px;
-}
-
-.launching-soon {
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: var(--dark-blue);
-  margin-bottom: 16px;
-  font-weight: bold;
+  margin-bottom: 40px;
 }
 
 /* Top row */
@@ -72,14 +64,15 @@ html,body{
 }
 
 .logo {
-  width:88px;
-  height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width: 88px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--light-gray);
   border-radius: 8px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .logo-img {
@@ -91,15 +84,22 @@ html,body{
   max-width: 88px;
   max-height: 38px;
 }
-
-.tagline {
-  flex:1;
-  font-size:12px;
-  letter-spacing:1px;
+.main-heading {
+  font-size: 14px;
+  letter-spacing: 1.5px;
   color: var(--dark-blue);
-  align-self:center;
-  text-align: center;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: left;
 }
+
+.sub-description {
+  font-size: 11px;
+  color: var(--medium-gray);
+  line-height: 1.5;
+  text-align: left;
+}
+
 
 /* Big Trade & Seek card */
 .hero {

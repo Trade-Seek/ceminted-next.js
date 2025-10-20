@@ -7,6 +7,13 @@ export default function Home() {
       <div className="background-grid">
         {/* Header Section */}
         <div className="header-section">
+          <div className="main-heading">
+            MAKING ONLINE CONNECTIONS MORE MEANINGFUL AND DECENTRALIZED
+          </div>
+          <div className="sub-description">
+            We empower creators everywhere to play, dream big, and build worlds
+            that bring people closer - on your own terms.
+          </div>
           <div className="launching-soon">LAUNCHING SOON</div>
           <div className="top-row">
             <div className="logo">
@@ -27,7 +34,7 @@ export default function Home() {
         <div className="hero">
           <div className="hero-card">
             <div className="small-top-left">Trade & Seek</div>
-            <button className="top-right-button">Join the Waitlist</button>
+            <button className="top-right-button">More Info</button>
 
             <Image
               className="cherries pixel-art"
