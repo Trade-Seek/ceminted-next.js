@@ -33,6 +33,7 @@ export default function Home() {
 
         {/* Hero Section */}
         <div className="hero">
+          <div className="launching-soon-text">LAUNCHING SOON</div>
           <div className="hero-card">
             <div className="small-top-left">Trade & Seek</div>
             <button className="top-right-button">More Info</button>
@@ -99,20 +100,20 @@ export default function Home() {
 
           {/* Sticky note */}
           <div
-            className="note"
-            style={{ position: "absolute", bottom: "70px", right: "40px" }}
+            className="note hero-note"
+            style={{ position: "absolute", bottom: "-40px", right: "-20px" }}
           >
             <div className="note-header">
-              1. Lessons Learned - 2023 trading edition
+              1. Lessons Learned - 2025 trading edition
             </div>
             <div className="note-time">10 MINUTES</div>
             <div className="note-grid">
-              <div className="note-item">risk</div>
-              <div className="note-item">profit</div>
-              <div className="note-item">loss</div>
-              <div className="note-item">chart</div>
-              <div className="note-item">signal</div>
-              <div className="note-item">entry</div>
+              <div className="note-item">LIVE</div>
+              <div className="note-item">LAUGH</div>
+              <div className="note-item">LEVERAGE</div>
+              <div className="note-item">TRADE</div>
+              <div className="note-item">MINTED</div>
+              <div className="note-item">CEMINTED</div>
             </div>
           </div>
         </div>
@@ -143,55 +144,72 @@ export default function Home() {
 
           {/* Sticky notes below cards */}
           <div
-            className="note"
-            style={{ position: "absolute", bottom: "-100px", left: "40px" }}
+            className="note note-yellow note-below-card"
+            style={{ position: "absolute", bottom: "-140px", left: "20px" }}
           >
             <div className="note-header">2. What else do I need?</div>
             <div className="note-time">10 MINUTES</div>
             <div className="note-grid">
-              <div className="note-item">match</div>
-              <div className="note-item">chat</div>
-              <div className="note-item">profile</div>
-              <div className="note-item">photo</div>
-              <div className="note-item">bio</div>
-              <div className="note-item">swipe</div>
+              <div className="note-item">BUY A</div>
+              <div className="note-item">DATING</div>
+              <div className="note-item">APP</div>
+              <div className="note-item">IS IT ON</div>
+              <div className="note-item">GOOGLE</div>
+              <div className="note-item">PLAYSTORE?</div>
             </div>
           </div>
 
           <div
-            className="note"
-            style={{ position: "absolute", bottom: "-100px", right: "40px" }}
+            className="note note-blue note-below-card"
+            style={{ position: "absolute", bottom: "-140px", right: "20px" }}
           >
-            <div className="note-header">2. Fashion game</div>
+            <div className="note-header">3. Fashion to Fun</div>
             <div className="note-time">10 MINUTES</div>
             <div className="note-grid">
-              <div className="note-item">style</div>
-              <div className="note-item">outfit</div>
-              <div className="note-item">trend</div>
-              <div className="note-item">color</div>
-              <div className="note-item">design</div>
-              <div className="note-item">show</div>
+              <div className="note-item">Fashion</div>
+              <div className="note-item">Makeup</div>
+              <div className="note-item">Runway</div>
+              <div className="note-item">Fashion</div>
+              <div className="note-item">Designing</div>
+              <div className="note-item">Clothing</div>
             </div>
           </div>
 
-          {/* Sparkles on fashion game card */}
+          {/* Sparkles on cards */}
           <Image
             className="sparkles pixel-art"
             src="/images/stars.svg"
             alt="sparkles"
-            width={12}
-            height={12}
-            style={{ position: "absolute", bottom: "-80px", right: "60px" }}
+            width={16}
+            height={16}
+            style={{ position: "absolute", bottom: "-120px", right: "80px" }}
+          />
+          <Image
+            className="sparkles pixel-art"
+            src="/images/stars.svg"
+            alt="sparkles"
+            width={14}
+            height={14}
+            style={{ position: "absolute", top: "60px", left: "-40px" }}
           />
         </div>
 
         {/* Socials */}
         <div className="socials">
-          SOCIALS:
-          <div className="social-icons" aria-hidden="true">
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
+          OUR SOCIALS:
+          <div className="social-icons">
+            <a href="#" className="social-pfp" aria-label="Social profile 1">
+              <div className="pfp-circle"></div>
+            </a>
+            <a href="#" className="social-pfp" aria-label="Social profile 2">
+              <div className="pfp-circle"></div>
+            </a>
+            <a href="#" className="social-pfp" aria-label="Social profile 3">
+              <div className="pfp-circle"></div>
+            </a>
+            <a href="#" className="social-pfp" aria-label="Social profile 4">
+              <div className="pfp-circle"></div>
+            </a>
           </div>
         </div>
 
