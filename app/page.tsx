@@ -1,20 +1,14 @@
 import Image from "next/image";
 import WaitlistForm from "@/components/WaitlistForm";
+import MusicPlayer from "@/components/MusicPlayer";
 
 export default function Home() {
   return (
     <div className="page">
+      <MusicPlayer />
       <div className="background-grid">
         {/* Header Section */}
         <div className="header-section">
-          <div className="main-heading">
-            MAKING ONLINE CONNECTIONS MORE MEANINGFUL AND DECENTRALIZED
-          </div>
-          <div className="sub-description">
-            We empower creators everywhere to play, dream big, and build worlds
-            that bring people closer - on your own terms.
-          </div>
-          <div className="launching-soon">LAUNCHING SOON</div>
           <div className="top-row">
             <div className="logo">
               <Image
@@ -26,7 +20,14 @@ export default function Home() {
                 unoptimized
               />
             </div>
-            <div className="tagline">A SYSTEM OF MEANINGFUL CONNECTIONS.</div>
+            <div className="header-text">
+              <div className="main-heading">
+                WE'RE MAKING ONLINE CONNECTIONS MORE MEANINGFUL
+              </div>
+              <div className="sub-description">
+                Dream big, have fun, and build safe and secure worlds with us
+              </div>
+            </div>
           </div>
         </div>
 
@@ -49,15 +50,15 @@ export default function Home() {
               className="cloud-left pixel-art"
               src="/images/pinkcloud.svg"
               alt="cloud left"
-              width={80}
-              height={60}
+              width={150}
+              height={120}
             />
             <Image
               className="cloud-right pixel-art"
-              src="/images/whitecloudwithstar.svg"
+              src="/images/pinkcloud.svg"
               alt="cloud right"
-              width={80}
-              height={60}
+              width={150}
+              height={120}
             />
 
             <Image
@@ -81,9 +82,13 @@ export default function Home() {
               <h1 className="hero-h1">
                 TRADE MORE SUSTAINABLY.
                 <br />
-                COMING SOON
+                <br />
+                WAITLIST SIGN UP
               </h1>
-              <div className="hero-sub">live. laugh. leverage trade.</div>
+              <div className="hero-sub">
+                Connect to complex markets with increased privacy, so you can
+                trade more confidently.
+              </div>
 
               <Image
                 className="pixel-heart"
