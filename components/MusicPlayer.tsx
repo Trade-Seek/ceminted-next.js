@@ -63,10 +63,9 @@ const tracks: Track[] = [
 
 export default function MusicPlayer() {
   const [currentTrack, setCurrentTrack] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [volume, setVolume] = useState(0.5);
   const [showPlaylist, setShowPlaylist] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -99,10 +98,6 @@ export default function MusicPlayer() {
     setIsPlaying(!isPlaying);
   };
 
-  const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
-  };
-
   const handleTrackEnd = () => {
     playNext();
   };
@@ -126,9 +121,9 @@ export default function MusicPlayer() {
           </button>
 
           <button
-            className={`player-btn heart-btn ${isFavorite ? "favorited" : ""}`}
-            onClick={toggleFavorite}
-            title="Favorite"
+            className={`player-btn heart-btn ${isPlaying ? "playing" : ""}`}
+            onClick={togglePlay}
+            title={isPlaying ? "Pause" : "Play"}
           >
             ♥
           </button>
@@ -138,14 +133,10 @@ export default function MusicPlayer() {
           </button>
         </div>
 
-        <button
-          className="player-info"
-          onClick={togglePlay}
-          title={isPlaying ? "Pause" : "Play"}
-        >
+        <div className="player-info">
           <span className="song-title">{tracks[currentTrack].title}</span>
           <span className="song-artist">{tracks[currentTrack].artist}</span>
-        </button>
+        </div>
 
         <button
           className="playlist-btn"

@@ -79,12 +79,7 @@ export default function Home() {
             />
 
             <div className="center-text">
-              <h1 className="hero-h1">
-                TRADE MORE SUSTAINABLY.
-                <br />
-                <br />
-                WAITLIST SIGN UP
-              </h1>
+              <h1 className="hero-h1">WAITLIST SIGN UP</h1>
               <div className="hero-sub">
                 Connect to complex markets with increased privacy, so you can
                 trade more confidently.
