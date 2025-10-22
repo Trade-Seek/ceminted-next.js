@@ -126,9 +126,9 @@ export default function MusicPlayer() {
           </button>
 
           <button
-            className={`player-btn heart-btn ${isFavorite ? "favorited" : ""}`}
-            onClick={toggleFavorite}
-            title="Favorite"
+            className={`player-btn heart-btn ${isPlaying ? "favorited" : ""}`}
+            onClick={togglePlay}
+            title={isPlaying ? "Pause" : "Play"}
           >
             ♥
           </button>
@@ -138,14 +138,10 @@ export default function MusicPlayer() {
           </button>
         </div>
 
-        <button
-          className="player-info"
-          onClick={togglePlay}
-          title={isPlaying ? "Pause" : "Play"}
-        >
-          <span className="song-title">{tracks[currentTrack].title}</span>
-          <span className="song-artist">{tracks[currentTrack].artist}</span>
-        </button>
+        <div className="player-info">
+          <p className="song-title">{tracks[currentTrack].title}</p>
+          <p className="song-artist">{tracks[currentTrack].artist}</p>
+        </div>
 
         <button
           className="playlist-btn"

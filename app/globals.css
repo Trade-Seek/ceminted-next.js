@@ -293,9 +293,9 @@ html, body {
 .cloud-left {
   position: absolute;
   top: -150px;
-  left: 500px;
-  width: 100%;
-  height: 100%;
+  left: 400px;
+  width: 125%;
+  height: 125%;
   image-rendering: pixelated;
   z-index: 5;
 }
@@ -303,20 +303,20 @@ html, body {
 .cloud-right {
   position: absolute;
   top: 150px;
-  right: 500px;
+  right: 400px;
   bottom: 30px;
-  width: 100%;
-  height: 100%;
+  width: 125%;
+  height: 125%;
   image-rendering: pixelated;
   z-index: 5;
 }
 .cloud-star {
   position: absolute;
-  bottom: -275px;
-  width: 100%;
-  height: 100%;
+  bottom: -325px;
+  width: 125%;
+  height: 125%;
   image-rendering: pixelated;
-  z-index: 3;
+  z-index: 0;
   opacity: 0.8;
 }
 .sparkles {
@@ -330,6 +330,8 @@ html, body {
 /* Up and coming section */
 .upcoming-section {
   margin-top: 40px;
+  position: relative; 
+  z-index: 2;   
 }
 
 .upcoming-header {
@@ -356,11 +358,12 @@ html, body {
   display:flex;
   gap:36px;
   margin-top:20px;
+  position: relative;
   justify-content:center;
 }
 .card-prog-svg {
   width: 420px;
-  height: 300px;
+  height: 500px;
   image-rendering: pixelated;
 }
 
@@ -370,23 +373,30 @@ html, body {
   width: 380px;
   height: 240px;
   bottom: -100px;
-  right: -200px;
+  right: -180px;
   image-rendering: pixelated;
 }
 
 .note-2 {
+  position: absolute; 
   width: 320px;
   height: 220px;
   image-rendering: pixelated;
+  left: 20px;          
+  top: 40px;          
+  z-index: 10;  
 }
 
 .note-3 {
+  position: absolute;  
   width: 320px;
   height: 220px;
   image-rendering: pixelated;
+  right: 20px;         
+  bottom: -80px;       
+  z-index: 10;         
 }
 
-/* Socials area */
 .socials {
   margin-top:38px;
   text-align:left;
@@ -517,11 +527,15 @@ img.pixel-art {
   .note-2 {
     width: 220px;
     height: 150px;
+    left: 10px;
+    top: 30px;
   }
 
   .note-3 {
     width: 220px;
     height: 150px;
+    right: 10px;
+    bottom: -60px;
   }
 
   .cloud-left {
@@ -602,20 +616,14 @@ img.pixel-art {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: transparent;
-  border: none;
   color: white;
   font-family: var(--pixel-font);
-  cursor: pointer;
   padding: 0 12px;
   min-width: 200px;
   max-width: 400px;
   text-align: left;
 }
 
-.player-info:hover {
-  opacity: 0.9;
-}
 
 .song-title {
   font-size: 11px;

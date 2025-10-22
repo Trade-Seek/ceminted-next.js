@@ -23,8 +23,6 @@ export default function Home() {
               width={24}
               height={24}
             />
-
-            {/* Decorative clouds */}
             <Image
               className="cloud-left pixel-art"
               src="/images/pinkcloud.svg"
@@ -43,8 +41,8 @@ export default function Home() {
               className="cloud-star pixel-art"
               src="/images/whitecloudwithstar.svg"
               alt="cloud with star"
-              width={200}
-              height={200}
+              width={300}
+              height={300}
             />
 
             <Image
@@ -112,7 +110,8 @@ export default function Home() {
               src="/images/inProgressDating.svg"
               alt="Dating app in progress"
               width={420}
-              height={300}
+              height={500}
+              style={{ objectFit: "cover" }}
             />
 
             <Image
@@ -120,7 +119,8 @@ export default function Home() {
               src="/images/inProgressFashion.svg"
               alt="Fashion game in progress"
               width={420}
-              height={300}
+              height={500}
+              style={{ objectFit: "cover" }}
             />
           </div>
 
