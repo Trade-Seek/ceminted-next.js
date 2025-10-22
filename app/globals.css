@@ -18,41 +18,91 @@
 }
 
 /* Base Styles */
-html,body{
-  height:100%;
-  margin:0;
-  background:var(--bg);
-  font-family:var(--pixel-font);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-
-.page {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:28px 18px;
-  box-sizing:border-box;
-  /* Grid background on full page */
+html, body {
+  height: 100%;
+  margin: 0;
   background:
     linear-gradient(transparent 47px, rgba(0,0,0,0.02) 47px) 0 0 / 48px 48px,
     linear-gradient(90deg, transparent 47px, rgba(0,0,0,0.02) 47px) 0 0 / 48px 48px,
     var(--bg);
+  font-family: var(--pixel-font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;  
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 18px;
+  box-sizing: border-box;
+  overflow-x: hidden;  
 }
 
 /* Content container */
 .background-grid{
   width:100%;
-  max-width:1100px;
-  background:transparent;
-  border-radius:18px;
-  padding:36px;
-  padding-bottom:100px;
+  max-width: calc(var(--container-width) + 2rem);
+  background: transparent;
+  padding:1rem;
   box-sizing:border-box;
 }
 
-/* Header section */
+/* Site Header */
+.site-header {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  
+  gap: 40px; 
+}
+
+.header-logo {
+  flex-shrink: 0;
+}
+
+.header-logo .logo-img {
+  width: 240px;
+  height: 104px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  margin-left: -100px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+.header-main-title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--dark-blue);
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.header-subtitle {
+  font-size: 12px;
+  color: var(--medium-gray);
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+/* Header section with LAUNCHING SOON */
 .header-section {
   margin-bottom: 40px;
 }
@@ -73,7 +123,7 @@ html,body{
   justify-content: center;
   background: var(--light-gray);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
   flex-shrink: 0;
 }
 
@@ -86,15 +136,6 @@ html,body{
   max-width: 88px;
   max-height: 38px;
 }
-
-.header-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  justify-content: center;
-}
-
 .main-heading {
   font-size: 14px;
   letter-spacing: 1.5px;
@@ -129,7 +170,7 @@ html,body{
   align-items:center;
   justify-content:center;
   position:relative;
-  overflow:hidden;
+  overflow:visible;
   padding:32px;
   box-sizing:border-box;
 }
@@ -185,12 +226,11 @@ html,body{
 }
 
 .hero-sub {
-  font-size:11px;
+  font-size:12px;
+  text-transform:lowercase;
   margin-bottom:18px;
   opacity:0.95;
   color: var(--dark-blue);
-  line-height: 1.6;
-  max-width: 450px;
 }
 
 /* Heart icon */
@@ -252,24 +292,33 @@ html,body{
 /* Decorative clouds */
 .cloud-left {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 150px;
-  height: 120px;
+  top: -150px;
+  left: 500px;
+  width: 100%;
+  height: 100%;
   image-rendering: pixelated;
   z-index: 5;
 }
 
 .cloud-right {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 150px;
-  height: 120px;
+  top: 150px;
+  right: 500px;
+  bottom: 30px;
+  width: 100%;
+  height: 100%;
   image-rendering: pixelated;
   z-index: 5;
 }
-
+.cloud-star {
+  position: absolute;
+  bottom: -275px;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  z-index: 3;
+  opacity: 0.8;
+}
 .sparkles {
   position: absolute;
   width: 16px;
@@ -309,83 +358,32 @@ html,body{
   margin-top:20px;
   justify-content:center;
 }
-
-.card-prog{
-  width:420px;
-  height:300px;
-  border-radius:22px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  filter: blur(6px);
+.card-prog-svg {
+  width: 420px;
+  height: 300px;
+  image-rendering: pixelated;
 }
 
-.card-prog.left {
-  background: linear-gradient(180deg, var(--big-blue-start), var(--big-blue-end));
-}
-
-.card-prog.right {
-  background: linear-gradient(180deg, var(--yellow-gradient-start), var(--yellow-gradient-end));
-}
-
-.card-prog .label{
-  position:absolute;
-  font-size:28px;
-  color: white;
-  text-transform:uppercase;
-  pointer-events:none;
-  mix-blend-mode:normal;
-}
-
-.card-prog .small-label {
+/* Sticky note images */
+.note-1 {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 10px;
-  color: var(--dark-blue);
-  text-transform: lowercase;
+  width: 380px;
+  height: 240px;
+  bottom: -100px;
+  right: -200px;
+  image-rendering: pixelated;
 }
 
-/* Sticky note boxes */
-.note{
-  position:absolute;
-  width:180px;
-  height:80px;
-  background:#ffd9d1;
-  border-radius:6px;
-  box-shadow: 0 6px 8px rgba(0,0,0,0.06);
-  font-size:10px;
-  padding:8px;
-  color: var(--dark-blue);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.note-2 {
+  width: 320px;
+  height: 220px;
+  image-rendering: pixelated;
 }
 
-.note-header {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-.note-time {
-  font-size: 8px;
-  opacity: 0.7;
-}
-
-.note-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 4px;
-}
-
-.note-item {
-  background: rgba(255,255,255,0.5);
-  border-radius: 2px;
-  padding: 2px 4px;
-  font-size: 8px;
-  text-align: center;
+.note-3 {
+  width: 320px;
+  height: 220px;
+  image-rendering: pixelated;
 }
 
 /* Socials area */
@@ -458,65 +456,39 @@ img.pixel-art {
   image-rendering: crisp-edges;
 }
 
-/* Enhanced responsive design */
-@media (max-width: 1200px) {
-  .background-grid {
-    max-width: 1000px;
-    padding: 24px;
-  }
-  
-  .hero-card {
-    height: 380px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .hero-card {
-    height: 340px;
-  }
-  
-  .card-prog {
-    width: 380px;
-    height: 280px;
-  }
-  
-  .email-input {
-    width: 360px;
-  }
-  
-  .note {
-    width: 160px;
-    height: 75px;
-  }
-}
-
+/* Responsive design */
 @media (max-width: 768px) {
   .background-grid {
     padding: 18px;
     margin: 10px;
   }
-  
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header-logo .logo-img {
+    width: 90px;
+    height: 39px;
+  }
+
   .header-text {
-    gap: 6px;
+    text-align: center;
   }
-  
-  .main-heading {
+
+  .header-main-title {
     font-size: 12px;
-    letter-spacing: 1px;
   }
-  
-  .sub-description {
-    font-size: 10px;
+
+  .header-subtitle {
+    font-size: 9px;
   }
   
   .hero-card {
     height: 300px;
     padding: 24px;
-  }
-  
-  .hero-sub {
-    font-size: 10px;
-    max-width: 280px;
   }
   
   .upcoming {
@@ -536,172 +508,46 @@ img.pixel-art {
     max-width: 280px;
   }
   
-  .note {
-    width: 140px;
-    height: 65px;
-    font-size: 9px;
+  .note-1 {
+    width: 260px;
+    height: 160px;
+    right: -280px ;
   }
-  
-  .note-item {
-    font-size: 7px;
-    padding: 1px 2px;
+
+  .note-2 {
+    width: 220px;
+    height: 150px;
+  }
+
+  .note-3 {
+    width: 220px;
+    height: 150px;
+  }
+
+  .cloud-left {
+    width: 100px;
+    height: 70px;
+  }
+
+  .cloud-right {
+    width: 220px;
+    height: 140px;
   }
   
   .hero-h1 {
     font-size: 22px;
   }
-
-  /* Smaller SVGs for mobile */
-  .cherries {
-    width: 24px;
-    height: 24px;
-    right: 120px;
-    top: 14px;
-  }
   
-  .cloud-left {
-    width: 90px;
-    height: 70px;
-    bottom: 15px;
-    left: 10px;
-  }
-  
-  .cloud-right {
-    width: 90px;
-    height: 70px;
-    top: 15px;
-    right: 10px;
-  }
-  
-  .pixel-heart {
-    width: 20px;
-    height: 20px;
-    margin: 8px auto;
-  }
-  
-  .sparkles {
-    width: 12px;
-    height: 12px;
-  }
-  
-  .upcoming-sparkles {
-    width: 16px;
-    height: 16px;
-    right: -35px;
-    top: -6px;
-  }
-  
-  .mountains {
-    width: 200px;
-    height: 100px;
-  }
-  
-  .grass {
-    height: 50px;
-  }
-  
-  .footer-sparkles {
-    width: 12px;
-    height: 12px;
-    bottom: 30px;
-    right: 80px;
-  }
-}
-
-@media (max-width: 480px) {
-  .background-grid {
-    padding: 12px;
-    margin: 5px;
-  }
-  
-  .top-row {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-  
-  .main-heading {
+  .tagline {
     font-size: 11px;
-    letter-spacing: 0.8px;
   }
-  
-  .sub-description {
-    font-size: 9px;
-  }
-  
-  .hero-card {
-    height: 280px;
-    padding: 18px;
-  }
-  
-  .hero-h1 {
-    font-size: 18px;
-    line-height: 1.1;
-  }
-  
-  .hero-sub {
-    font-size: 9px;
-    max-width: 220px;
-  }
-  
-  .email-input {
+
+  .card-prog-svg {
     width: 100%;
-    max-width: 250px;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .join-btn {
-    width: 100%;
-  }
-  
-  .card-prog {
-    height: 200px;
-  }
-  
-  .mountains {
-    width: 150px;
-    height: 80px;
-  }
-  
-  .grass {
-    height: 40px;
+    max-width: 350px;
+    height: 250px;
   }
 }
-
-/* Tablet optimizations */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .cherries {
-    width: 28px;
-    height: 28px;
-    right: 130px;
-    top: 15px;
-  }
-  
-  .cloud-left {
-    width: 120px;
-    height: 95px;
-    bottom: 20px;
-    left: 15px;
-  }
-  
-  .cloud-right {
-    width: 120px;
-    height: 95px;
-    top: 20px;
-    right: 15px;
-  }
-  
-  .mountains {
-    width: 240px;
-    height: 120px;
-  }
-  
-  .grass {
-    height: 60px;
-  }
-}
-
 /* Music Player Styles */
 .music-player {
   position: fixed;
@@ -747,27 +593,28 @@ img.pixel-art {
   padding: 4px 6px;
 }
 
-.heart-btn.playing {
+.heart-btn.favorited {
   color: #ff6b9d;
   text-shadow: 0 0 8px rgba(255, 107, 157, 0.8);
-  animation: heartbeat 1s ease-in-out infinite;
-}
-
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
 }
 
 .player-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background: transparent;
+  border: none;
   color: white;
   font-family: var(--pixel-font);
+  cursor: pointer;
   padding: 0 12px;
   min-width: 200px;
   max-width: 400px;
   text-align: left;
+}
+
+.player-info:hover {
+  opacity: 0.9;
 }
 
 .song-title {
@@ -945,11 +792,5 @@ img.pixel-art {
   .player-btn {
     font-size: 14px;
     padding: 3px 6px;
-  }
-}
-
-@media (max-width: 480px) {
-  .volume-control {
-    display: none; /* Hide volume on very small screens */
   }
 }

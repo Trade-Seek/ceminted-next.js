@@ -1,35 +1,14 @@
 import Image from "next/image";
 import WaitlistForm from "@/components/WaitlistForm";
 import MusicPlayer from "@/components/MusicPlayer";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="page">
       <MusicPlayer />
       <div className="background-grid">
-        {/* Header Section */}
-        <div className="header-section">
-          <div className="top-row">
-            <div className="logo">
-              <Image
-                src="/images/cemintedlogo.gif"
-                alt="Ceminted Logo"
-                width={88}
-                height={38}
-                className="logo-img"
-                unoptimized
-              />
-            </div>
-            <div className="header-text">
-              <div className="main-heading">
-                WE'RE MAKING ONLINE CONNECTIONS MORE MEANINGFUL
-              </div>
-              <div className="sub-description">
-                Dream big, have fun, and build safe and secure worlds with us
-              </div>
-            </div>
-          </div>
-        </div>
+        <Header />
 
         {/* Hero Section */}
         <div className="hero">
@@ -50,15 +29,22 @@ export default function Home() {
               className="cloud-left pixel-art"
               src="/images/pinkcloud.svg"
               alt="cloud left"
-              width={150}
-              height={120}
+              width={140}
+              height={100}
             />
             <Image
               className="cloud-right pixel-art"
               src="/images/pinkcloud.svg"
               alt="cloud right"
-              width={150}
-              height={120}
+              width={320}
+              height={200}
+            />
+            <Image
+              className="cloud-star pixel-art"
+              src="/images/whitecloudwithstar.svg"
+              alt="cloud with star"
+              width={200}
+              height={200}
             />
 
             <Image
@@ -82,7 +68,7 @@ export default function Home() {
               <h1 className="hero-h1">WAITLIST SIGN UP</h1>
               <div className="hero-sub">
                 Connect to complex markets with increased privacy, so you can
-                trade more confidently.
+                trade more confidently and sustainably.
               </div>
 
               <Image
@@ -98,23 +84,13 @@ export default function Home() {
           </div>
 
           {/* Sticky note */}
-          <div
-            className="note"
-            style={{ position: "absolute", bottom: "70px", right: "40px" }}
-          >
-            <div className="note-header">
-              1. Lessons Learned - 2023 trading edition
-            </div>
-            <div className="note-time">10 MINUTES</div>
-            <div className="note-grid">
-              <div className="note-item">risk</div>
-              <div className="note-item">profit</div>
-              <div className="note-item">loss</div>
-              <div className="note-item">chart</div>
-              <div className="note-item">signal</div>
-              <div className="note-item">entry</div>
-            </div>
-          </div>
+          <Image
+            className="note-1 pixel-art"
+            src="/images/stickyNote1.svg"
+            alt="Lessons Learned - 2023 trading edition"
+            width={380}
+            height={240}
+          />
         </div>
 
         {/* Upcoming Section */}
@@ -131,48 +107,39 @@ export default function Home() {
           </div>
 
           <div className="upcoming">
-            <div className="card-prog left">
-              <div className="small-label">dating app</div>
-              <div className="label">IN PROGRESS</div>
-            </div>
-            <div className="card-prog right">
-              <div className="small-label">fashion game</div>
-              <div className="label">IN PROGRESS</div>
-            </div>
+            <Image
+              className="card-prog-svg dating pixel-art"
+              src="/images/inProgressDating.svg"
+              alt="Dating app in progress"
+              width={420}
+              height={300}
+            />
+
+            <Image
+              className="card-prog-svg fashion pixel-art"
+              src="/images/inProgressFashion.svg"
+              alt="Fashion game in progress"
+              width={420}
+              height={300}
+            />
           </div>
 
           {/* Sticky notes below cards */}
-          <div
-            className="note"
-            style={{ position: "absolute", bottom: "-100px", left: "40px" }}
-          >
-            <div className="note-header">2. What else do I need?</div>
-            <div className="note-time">10 MINUTES</div>
-            <div className="note-grid">
-              <div className="note-item">match</div>
-              <div className="note-item">chat</div>
-              <div className="note-item">profile</div>
-              <div className="note-item">photo</div>
-              <div className="note-item">bio</div>
-              <div className="note-item">swipe</div>
-            </div>
-          </div>
+          <Image
+            className="note-2 pixel-art"
+            src="/images/stickyNote2.svg"
+            alt="What else do I need?"
+            width={320}
+            height={220}
+          />
 
-          <div
-            className="note"
-            style={{ position: "absolute", bottom: "-100px", right: "40px" }}
-          >
-            <div className="note-header">2. Fashion game</div>
-            <div className="note-time">10 MINUTES</div>
-            <div className="note-grid">
-              <div className="note-item">style</div>
-              <div className="note-item">outfit</div>
-              <div className="note-item">trend</div>
-              <div className="note-item">color</div>
-              <div className="note-item">design</div>
-              <div className="note-item">show</div>
-            </div>
-          </div>
+          <Image
+            className="note-3 pixel-art"
+            src="/images/stickyNote3.svg"
+            alt="Fashion game"
+            width={320}
+            height={220}
+          />
 
           {/* Sparkles on fashion game card */}
           <Image
