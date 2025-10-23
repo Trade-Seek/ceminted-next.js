@@ -400,28 +400,6 @@ html, body {
   z-index: 10;
 }
 
-.socials {
-  margin-top: 80px;        
-  margin-bottom: 60px;     
-  text-align: center;
-  color: var(--dark-blue);
-  font-weight: bold;
-}
-
-.socials-title {
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 24px;
-  text-transform: uppercase;
-}
-
-.social-icons {
-  display: flex;
-  gap: 24px;               
-  justify-content: center;
-  align-items: center;
-}
-
 .social-dot {
   width: 80px;             
   height: 80px;
@@ -441,7 +419,6 @@ html, body {
   box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);  
 }
 
-/* Mountains / grass at bottom */
 .footer-graphics {
   margin-top: 0;           
   display: flex;
@@ -451,23 +428,14 @@ html, body {
 }
 
 .mountains{
-  width: 100%;
-  height: 100%;
+  left: -350px;
+  bottom: -419px;           
+  width: 1000px;
+  height: 1000px;
   image-rendering:pixelated;
   position: relative;
-  z-index: 2;
+  z-index: 8;
   object-fit: contain;
-}
-
-.grass{
-  height: 70px;
-  width:100%;
-  image-rendering:pixelated;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  object-fit: cover;
 }
 
 .footer-sparkles {
@@ -796,16 +764,23 @@ img.pixel-art {
 .footer-container {
   margin-top: 100px;
   position: relative;
-  min-height: 400px;
+  min-height: 600px;           /* Increased from 400px to 600px */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 60px 0 0 0;
 }
 
+
 .socials {
-  margin: 0 auto 80px;     
+  margin: 0 auto 10px;     
   text-align: center;
-  color: rgb(0, 0, 0);            
+  color: rgb(0, 0, 0);
   font-weight: bold;
   position: relative;
-  z-index: 10;            
+  z-index: 10;
+  max-width: 920px;               
+  padding: 0 1rem;                
 }
 
 .socials-title {
@@ -813,7 +788,7 @@ img.pixel-art {
   letter-spacing: 2px;
   margin-bottom: 32px;
   text-transform: uppercase;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .social-icons {
@@ -859,25 +834,13 @@ img.pixel-art {
   pointer-events: none;   
 }
 
-.mountains {
-  position: absolute;
-  left: 0;
-  bottom: 70px;           
-width: 100%;
-height: 100%;
-  image-rendering: pixelated;
-  z-index: 3;
-  object-fit: contain;
-}
-
 .grass {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 100%;
   width: 100%;
-  image-rendering: pixelated;
   z-index: 2;
   object-fit: cover;
 }
@@ -888,7 +851,6 @@ height: 100%;
   right: 10%;
   width: 32px;            
   height: 32px;
-  image-rendering: pixelated;
   z-index: 12;
   animation: twinkle 2s ease-in-out infinite;
 }
@@ -900,12 +862,12 @@ height: 100%;
 @media (max-width: 768px) {
   .footer-container {
     margin-top: 60px;
-    min-height: 300px;
-    padding: 40px 0 0 0;
+    min-height: 500px;           
+    padding: 40px 0 150px 0;     
   }
 
   .socials {
-    margin-bottom: 60px;
+    margin-bottom: 200px;  
   }
 
   .socials-title {
