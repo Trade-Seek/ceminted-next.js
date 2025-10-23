@@ -152,40 +152,100 @@ export default function Home() {
           />
         </div>
 
-        {/* Socials */}
-        <div className="socials">
-          SOCIALS:
-          <div className="social-icons" aria-hidden="true">
-            <div className="dot"></div>
-            <div className="dot"></div>
-            <div className="dot"></div>
+        {/* Footer Section */}
+        <div className="footer-container">
+          {/* Socials */}
+          <div className="socials">
+            <div className="socials-title">OUR SOCIALS:</div>
+            <div className="social-icons">
+              <a
+                href="https://twitter.com/ceminted"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-dot"
+                aria-label="Twitter Account 1"
+              >
+                <Image
+                  src="/images/twitterLogo.jpg"
+                  alt="Team member 1"
+                  width={80}
+                  height={80}
+                  className="social-image"
+                />
+              </a>
+              <a
+                href="https://twitter.com/katreenatecson"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-dot"
+                aria-label="Twitter Account 2"
+              >
+                <Image
+                  src="/images/kat.jpg"
+                  alt="Team member 2"
+                  width={80}
+                  height={80}
+                  className="social-image"
+                />
+              </a>
+              <a
+                href="https://twitter.com/fwazsol"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-dot"
+                aria-label="Twitter Account 3"
+              >
+                <Image
+                  src="/images/fwaz.jpg"
+                  alt="Team member 3"
+                  width={80}
+                  height={80}
+                  className="social-image"
+                />
+              </a>
+              <a
+                href="https://twitter.com/shrysxs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-dot"
+                aria-label="Twitter Account 4"
+              >
+                <Image
+                  src="/images/shreyas.jpg"
+                  alt="Team member 4"
+                  width={80}
+                  height={80}
+                  className="social-image"
+                />
+              </a>
+            </div>
           </div>
-        </div>
 
-        {/* Footer Graphics */}
-        <div className="footer-graphics">
-          <Image
-            className="mountains pixel-art"
-            src="/images/mountain.svg"
-            alt="mountains"
-            width={220}
-            height={120}
-          />
-          <Image
-            className="grass pixel-art"
-            src="/images/grass.svg"
-            alt="grass"
-            width={1100}
-            height={56}
-            style={{ objectFit: "cover" }}
-          />
-          <Image
-            className="footer-sparkles pixel-art"
-            src="/images/stars.svg"
-            alt="sparkles"
-            width={12}
-            height={12}
-          />
+          {/* Footer Graphics */}
+          <div className="footer-graphics">
+            <Image
+              className="mountains pixel-art"
+              src="/images/mountain.svg"
+              alt="mountains"
+              width={280}
+              height={200}
+            />
+            <Image
+              className="grass pixel-art"
+              src="/images/grass.svg"
+              alt="grass"
+              width={1100}
+              height={56}
+              style={{ objectFit: "cover" }}
+            />
+            <Image
+              className="footer-sparkles pixel-art"
+              src="/images/stars.svg"
+              alt="sparkles"
+              width={24}
+              height={24}
+            />
+          </div>
         </div>
       </div>
     </div>

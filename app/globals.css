@@ -47,6 +47,7 @@ html, body {
   max-width: calc(var(--container-width) + 2rem);
   background: transparent;
   padding:1rem;
+  overflow: visible; 
   box-sizing:border-box;
 }
 
@@ -332,6 +333,7 @@ html, body {
   margin-top: 40px;
   position: relative; 
   z-index: 2;   
+  overflow: visible;
 }
 
 .upcoming-header {
@@ -353,84 +355,104 @@ html, body {
   z-index: 8;
 }
 
-/* Up and coming blocks */
 .upcoming {
-  display:flex;
-  gap:36px;
-  margin-top:20px;
+  display: flex;
+  gap: 48px;        /* Increased from 36px for more spacing */
+  margin-top: 20px;
   position: relative;
-  justify-content:center;
+  justify-content: center;
+  overflow: visible;  /* ADD THIS */
 }
 .card-prog-svg {
-  width: 420px;
-  height: 500px;
+  width: 550px;     
+  height: 600px;    
   image-rendering: pixelated;
+  border-radius: 22px;  
 }
 
 /* Sticky note images */
 .note-1 {
   position: absolute;
-  width: 380px;
-  height: 240px;
+  width: 420px;
+  height: 300px;
   bottom: -100px;
   right: -180px;
   image-rendering: pixelated;
 }
 
 .note-2 {
-  position: absolute; 
-  width: 320px;
-  height: 220px;
+  position: absolute;
+  width: 420px;
+  height: 300px;
   image-rendering: pixelated;
-  left: 20px;          
-  top: 40px;          
-  z-index: 10;  
+  left: -125px;      
+  bottom: -120px;       
+  z-index: 10;
 }
 
 .note-3 {
-  position: absolute;  
-  width: 320px;
-  height: 220px;
+  position: absolute;
+  width: 420px;
+  height: 300px;
   image-rendering: pixelated;
-  right: 20px;         
-  bottom: -80px;       
-  z-index: 10;         
+  right: -25px;     
+  bottom: -125px;  
+  z-index: 10;
 }
 
 .socials {
-  margin-top:38px;
-  text-align:left;
-  font-size:12px;
-  letter-spacing:1px;
+  margin-top: 80px;        
+  margin-bottom: 60px;     
+  text-align: center;
   color: var(--dark-blue);
   font-weight: bold;
 }
 
-.social-icons{
-  display:flex;
-  gap:18px;
-  margin-top:12px;
+.socials-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
-.social-icons .dot{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  background:#000;
+.social-icons {
+  display: flex;
+  gap: 24px;               
+  justify-content: center;
+  align-items: center;
+}
+
+.social-dot {
+  width: 80px;             
+  height: 80px;
+  border-radius: 50%;
+  background: #f5f5f5;     
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #d4a574;  
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  
+}
+
+.social-dot:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);  
 }
 
 /* Mountains / grass at bottom */
-.footer-graphics{
-  margin-top:28px;
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
+.footer-graphics {
+  margin-top: 0;           
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   position: relative;
 }
 
 .mountains{
-  width: 280px;
-  height: 140px;
+  width: 100%;
+  height: 100%;
   image-rendering:pixelated;
   position: relative;
   z-index: 2;
@@ -571,14 +593,13 @@ img.pixel-art {
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 25px;
   background: linear-gradient(90deg, #9b7fb8 0%, #e89dc9 100%);
-  padding: 12px 20px;
-  border-radius: 30px;
+  padding: 5px 150px;
+  border-radius: 20px;
   box-shadow: 0 4px 20px rgba(155, 127, 184, 0.4);
   font-family: var(--pixel-font);
-  max-width: 90%;
-  width: auto;
+  max-width: 100%;
 }
 
 .player-controls {
@@ -772,33 +793,143 @@ img.pixel-art {
   text-align: right;
 }
 
-/* Mobile responsive */
+.footer-container {
+  margin-top: 100px;
+  position: relative;
+  min-height: 400px;
+}
+
+.socials {
+  margin: 0 auto 80px;     
+  text-align: center;
+  color: rgb(0, 0, 0);            
+  font-weight: bold;
+  position: relative;
+  z-index: 10;            
+}
+
+.socials-title {
+  font-size: 16px;        
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  gap: 28px;              
+  justify-content: center;
+  align-items: center;
+}
+
+.social-dot {
+  width: 90px;            
+  height: 90px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #d4a574;  
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;       
+}
+
+.social-dot:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.5);
+}
+.social-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Footer Graphics */
+.footer-graphics {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  pointer-events: none;   
+}
+
+.mountains {
+  position: absolute;
+  left: 0;
+  bottom: 70px;           
+width: 100%;
+height: 100%;
+  image-rendering: pixelated;
+  z-index: 3;
+  object-fit: contain;
+}
+
+.grass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  width: 100%;
+  image-rendering: pixelated;
+  z-index: 2;
+  object-fit: cover;
+}
+
+.footer-sparkles {
+  position: absolute;
+  top: -180px;            
+  right: 10%;
+  width: 32px;            
+  height: 32px;
+  image-rendering: pixelated;
+  z-index: 12;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
 @media (max-width: 768px) {
-  .music-player {
-    padding: 10px 14px;
-    gap: 8px;
-    bottom: 10px;
+  .footer-container {
+    margin-top: 60px;
+    min-height: 300px;
+    padding: 40px 0 0 0;
   }
 
-  .player-info {
-    min-width: 120px;
-    max-width: 200px;
+  .socials {
+    margin-bottom: 60px;
   }
 
-  .song-title {
-    font-size: 9px;
+  .socials-title {
+    font-size: 12px;
   }
 
-  .song-artist {
-    font-size: 7px;
+  .social-dot {
+    width: 70px;
+    height: 70px;
+    border: 3px solid #d4a574;
   }
 
-  .volume-slider {
-    width: 60px;
+  .social-icons {
+    gap: 18px;
   }
 
-  .player-btn {
-    font-size: 14px;
-    padding: 3px 6px;
+  .mountains {
+    width: 200px;
+    height: 140px;
+  }
+
+  .footer-sparkles {
+    width: 24px;
+    height: 24px;
+    top: -140px;
   }
 }
