@@ -6,15 +6,15 @@ import Header from "@/components/Header";
 export default function Home() {
   return (
     <div className="page">
-      <MusicPlayer />
-      <div className="background-grid">
+      <div>
+        <MusicPlayer />
         <Header />
 
         {/* Hero Section */}
         <div className="hero">
           <div className="hero-card">
             <div className="small-top-left">Trade & Seek</div>
-            <button className="top-right-button">SURVEY</button>
+            <button className="top-right-button survey-button">SURVEY</button>
 
             <Image
               className="cherries pixel-art"
@@ -222,29 +222,25 @@ export default function Home() {
           </div>
 
           {/* Footer Graphics */}
-          <div className="footer-graphics">
-            <Image
-              className="mountains pixel-art"
-              src="/images/mountain.svg"
-              alt="mountains"
-              width={280}
-              height={200}
-            />
-            <Image
-              className="grass pixel-art"
-              src="/images/grass.svg"
-              alt="grass"
-              width={1100}
-              height={56}
-              style={{ objectFit: "cover" }}
-            />
-            <Image
+          <div className="footer-graphics-wrapper">
+            <div className="footer-graphics">
+              <Image
+                className="mountains pixel-art"
+                src="/images/mountain.svg"
+                alt="mountains"
+                width={663}
+                height={260}
+              />
+              <div className="grass-img" />
+
+              <Image
               className="footer-sparkles pixel-art"
               src="/images/stars.svg"
               alt="sparkles"
               width={24}
               height={24}
             />
+            </div>
           </div>
         </div>
       </div>
