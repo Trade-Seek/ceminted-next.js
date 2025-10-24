@@ -10,7 +10,6 @@ export default function Home() {
         <MusicPlayer />
         <Header />
 
-        {/* Hero Section */}
         <div className="hero">
           <div className="hero-card">
             <div className="small-top-left">Trade & Seek</div>
@@ -234,12 +233,12 @@ export default function Home() {
               <div className="grass-img" />
 
               <Image
-              className="footer-sparkles pixel-art"
-              src="/images/stars.svg"
-              alt="sparkles"
-              width={24}
-              height={24}
-            />
+                className="footer-sparkles pixel-art"
+                src="/images/stars.svg"
+                alt="sparkles"
+                width={24}
+                height={24}
+              />
             </div>
           </div>
         </div>
