@@ -14,7 +14,7 @@ export default function Home() {
         <div className="hero">
           <div className="hero-card">
             <div className="small-top-left">Trade & Seek</div>
-            <button className="top-right-button">More Info</button>
+            <button className="top-right-button">SURVEY</button>
 
             <Image
               className="cherries pixel-art"

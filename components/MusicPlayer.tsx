@@ -67,23 +67,57 @@ export default function MusicPlayer() {
   const [volume, setVolume] = useState(0.5);
   const [showPlaylist, setShowPlaylist] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  // Set initial volume
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
     }
   }, [volume]);
 
+  // Handle play/pause state changes
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.play();
+        audioRef.current.play().catch((error) => {
+          console.log("Play failed:", error);
+          setIsPlaying(false);
+        });
       } else {
         audioRef.current.pause();
       }
     }
   }, [isPlaying, currentTrack]);
+
+  // Autoplay after first user interaction
+  useEffect(() => {
+    const handleFirstInteraction = async () => {
+      if (!hasInteracted && audioRef.current) {
+        setHasInteracted(true);
+        try {
+          await audioRef.current.play();
+          setIsPlaying(true);
+          console.log("✅ Autoplay started after user interaction");
+        } catch (error) {
+          console.log("❌ Autoplay failed:", error);
+          setIsPlaying(false);
+        }
+      }
+    };
+
+    // Listen for any user interaction (click, scroll, or keypress)
+    window.addEventListener("click", handleFirstInteraction, { once: true });
+    window.addEventListener("scroll", handleFirstInteraction, { once: true });
+    window.addEventListener("keydown", handleFirstInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener("click", handleFirstInteraction);
+      window.removeEventListener("scroll", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
+    };
+  }, [hasInteracted]);
 
   const playPrevious = () => {
     setCurrentTrack((prev) => (prev === 0 ? tracks.length - 1 : prev - 1));
