@@ -9,7 +9,7 @@ export default function Home() {
       <div className="wrapper">
         <MusicPlayer />
         <Header />
-
+        //fix
         <div className="hero">
           <p className="uppercase text-deep-blue">Launching soon</p>
           <div className="hero-card">
@@ -93,7 +93,6 @@ export default function Home() {
             height={240}
           />
         </div>
-
         {/* Upcoming Section */}
         <div className="upcoming-section">
           <div className="upcoming-header">
@@ -142,7 +141,6 @@ export default function Home() {
             height={220}
           />
 
-          {/* Sparkles on fashion game card */}
           <Image
             className="sparkles pixel-art"
             src="/images/stars.svg"
@@ -152,7 +150,6 @@ export default function Home() {
             style={{ position: "absolute", bottom: "-80px", right: "60px" }}
           />
         </div>
-
         {/* Footer Section */}
         <div className="footer-container">
           {/* Socials */}
