@@ -65,21 +65,23 @@ export default function WaitlistForm() {
           <input
             id="email"
             type="email"
-            placeholder="your@emailhere.com"
+            placeholder="your@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading" || status === "success"}
             required
           />
-          <button
-            type="submit"
-            className="join-btn"
-            disabled={status === "loading" || status === "success"}
-          >
-            {status === "loading" && "JOINING..."}
-            {status === "success" && "JOINED ✓"}
-            {(status === "idle" || status === "error") && "JOIN"}
-          </button>
+          <div className="join-btn__wrapper pixel-button-wrapper">
+            <button
+              type="submit"
+              className="pixel-button"
+              disabled={status === "loading" || status === "success"}
+            >
+              {status === "loading" && "JOINING..."}
+              {status === "success" && "JOINED ✓"}
+              {(status === "idle" || status === "error") && "JOIN"}
+            </button>
+          </div>
         </div>
       </form>
 

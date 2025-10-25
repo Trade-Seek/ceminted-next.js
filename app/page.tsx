@@ -6,14 +6,17 @@ import Header from "@/components/Header";
 export default function Home() {
   return (
     <div className="page">
-      <div>
+      <div className="wrapper">
         <MusicPlayer />
         <Header />
 
         <div className="hero">
+          <p className="uppercase text-deep-blue">Launching soon</p>
           <div className="hero-card">
-            <div className="small-top-left">Trade & Seek</div>
-            <button className="top-right-button survey-button">SURVEY</button>
+            <div className="hero-card__title-group">
+              <div className="hero-card__title">Trade & Seek</div>
+              <button className="top-right-button survey-button">SURVEY</button>
+            </div>
 
             <Image
               className="cherries pixel-art"
@@ -23,14 +26,15 @@ export default function Home() {
               height={24}
             />
             <Image
-              className="cloud-left pixel-art"
+              className="cloud-left pixel-art animate-float"
               src="/images/pinkcloud.svg"
               alt="cloud left"
               width={140}
               height={100}
             />
             <Image
-              className="cloud-right pixel-art"
+              className="cloud-right pixel-art animate-float"
+              style={{ "--delay": "-2s" } as React.CSSProperties}
               src="/images/pinkcloud.svg"
               alt="cloud right"
               width={320}
@@ -108,18 +112,16 @@ export default function Home() {
               className="card-prog-svg dating pixel-art"
               src="/images/inProgressDating.svg"
               alt="Dating app in progress"
-              width={420}
-              height={500}
-              style={{ objectFit: "cover" }}
+              width={840}
+              height={1000}
             />
 
             <Image
               className="card-prog-svg fashion pixel-art"
-              src="/images/inProgressFashion.svg"
+              src="/images/in-progress-fashion.png"
               alt="Fashion game in progress"
-              width={420}
-              height={500}
-              style={{ objectFit: "cover" }}
+              width={840}
+              height={1000}
             />
           </div>
 

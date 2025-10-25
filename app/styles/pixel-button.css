@@ -1,0 +1,98 @@
+.pixel-button-wrapper {
+  /* --- DEVELOPER API ---
+    Set these HSL values inline or in your own CSS.
+    (Defaults are for the blue button)
+    */
+  --btn-h: 208; /* Hue (the color, 0-360) */
+  --btn-s: 77%; /* Saturation (vibrancy) */
+  --btn-l: 62%; /* Lightness (brightness) */
+  --pixel-btn-size: 2px;
+
+  --pixel-btn-face: hsl(var(--btn-h), var(--btn-s), var(--btn-l));
+  --pixel-btn-light: hsl(var(--btn-h), var(--btn-s), calc(var(--btn-l) + 80%));
+  --pixel-btn-shadow: hsl(var(--btn-h), var(--btn-s), calc(var(--btn-l) - 15%));
+  --pixel-btn-text-shadow: hsl(
+    var(--btn-h),
+    var(--btn-s),
+    calc(var(--btn-l) - 25%)
+  );
+
+  --pixel-btn-border: #000;
+  --pixel-btn-text: #fff;
+  --pixel-unit: 4px;
+
+  --p2: calc(var(--pixel-unit) * 2);
+
+  --pixel-clip-path: polygon(
+    /* Top-left rounded corner */ 0% var(--p2),
+    var(--pixel-unit) var(--p2),
+    var(--pixel-unit) var(--pixel-unit),
+    var(--p2) var(--pixel-unit),
+    var(--p2) 0%,
+
+    /* Top-right rounded corner */ calc(100% - var(--p2)) 0%,
+    calc(100% - var(--p2)) var(--pixel-unit),
+    calc(100% - var(--pixel-unit)) var(--pixel-unit),
+    calc(100% - var(--pixel-unit)) var(--p2),
+    100% var(--p2),
+    /* Bottom-right rounded corner */ 100% calc(100% - var(--p2)),
+    calc(100% - var(--pixel-unit)) calc(100% - var(--p2)),
+    calc(100% - var(--pixel-unit)) calc(100% - var(--pixel-unit)),
+    calc(100% - var(--p2)) calc(100% - var(--pixel-unit)),
+    calc(100% - var(--p2)) 100%,
+
+    /* Bottom-left rounded corner */ var(--p2) 100%,
+    var(--p2) calc(100% - var(--pixel-unit)),
+    var(--pixel-unit) calc(100% - var(--pixel-unit)),
+    var(--pixel-unit) calc(100% - var(--p2)),
+    0% calc(100% - var(--p2))
+  );
+
+  position: relative;
+  display: inline-block;
+  background-color: var(--pixel-btn-border);
+  padding: var(--pixel-btn-size);
+  clip-path: var(--pixel-clip-path);
+  transition: transform 0.05s linear;
+}
+
+.pixel-button {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--pixel-btn-face);
+  color: var(--pixel-btn-text);
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  clip-path: var(--pixel-clip-path);
+}
+
+.pixel-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--pixel-btn-size);
+  background: var(--pixel-btn-light);
+  clip-path: var(--pixel-clip-path);
+  z-index: 1;
+}
+
+.pixel-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--pixel-btn-size);
+  background: var(--pixel-btn-shadow);
+  clip-path: var(--pixel-clip-path);
+  z-index: 1;
+}
+
+.pixel-button-wrapper:active {
+  transform: translateY(var(--pixel-btn-size));
+}
