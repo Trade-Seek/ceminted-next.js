@@ -14,7 +14,14 @@ export default function Home() {
           <div className="hero-card">
             <div className="hero-card__title-group">
               <div className="hero-card__title">Trade & Seek</div>
-              <button className="top-right-button survey-button">SURVEY</button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdqm3Y39x5p4GS3glXgxVAaCbA2ZGCW8m83qOwNKLYlY3j5EA/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="top-right-button survey-button"
+              >
+                SURVEY
+              </a>
             </div>
 
             <Image
