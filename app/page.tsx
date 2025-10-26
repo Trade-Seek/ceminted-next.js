@@ -9,7 +9,6 @@ export default function Home() {
       <div className="wrapper">
         <MusicPlayer />
         <Header />
-        //fix
         <div className="hero">
           <p className="uppercase text-deep-blue">Launching soon</p>
           <div className="hero-card">
