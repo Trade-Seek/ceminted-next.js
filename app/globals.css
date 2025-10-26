@@ -16,10 +16,8 @@
   --light-gray: #f3f3f7;
   --medium-gray: #8a8a8a;
   --yellow-gradient-start: #fff4b8;
-  --yellow-gradient-end: #ffb84f;
-  --cursor-default: url("/cursors/coin-default.png") 16 16, auto;
-  --cursor-pointer: url("/cursors/coin-pointer.png") 16 16, pointer;
-}
+  --yellow-gradient-end: #ffb84f;}
+  
 
 html {
   min-height: 100vh;
@@ -1078,34 +1076,14 @@ img.pixel-art {
     animation: float 6s var(--delay) ease-in-out infinite;
   }
 }
-html, body, .page {
-  cursor: var(--cursor-default);
-}
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-  cursor: text;
-}
-a[href],
-button:not(:disabled),
-[role="button"],
-input[type="button"]:not(:disabled),
-input[type="submit"]:not(:disabled),
-label,
-.player-btn,
-.playlist-item,
-.playlist-btn,
-.volume-icon,
-.volume-slider,
-.social-dot,
-.join-btn__wrapper button:not(:disabled),
-.survey-button {
-  cursor: var(--cursor-pointer);
-}
 
-/* Preserve the disabled look for buttons already styled elsewhere */
-button:disabled,
-.join-btn:disabled {
-  cursor: not-allowed;
+/* ===== Custom Cursor (Software Cursor) ===== */
+/* Hide native cursor only on desktop devices with precise pointers */
+@media (pointer: fine) {
+  html,
+  body,
+  .page,
+  * {
+    cursor: none !important;
+  }
 }

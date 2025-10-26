@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CursorTrail from "@/components/CursorTrail";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Ceminted — Trade & Seek (Coming Soon)",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body>
         <div className="grid-background" />
         <CursorTrail />
+        <CustomCursor />
         {children}
       </body>
     </html>

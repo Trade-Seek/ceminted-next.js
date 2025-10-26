@@ -21,7 +21,7 @@ export default function CursorTrail() {
       const now = Date.now();
 
       // Throttle to every 80ms for performance
-      if (now - lastSparkleTime < 80) {
+      if (now - lastSparkleTime < 30) {
         return;
       }
 
@@ -31,7 +31,7 @@ export default function CursorTrail() {
         id: sparkleId++,
         x: e.clientX,
         y: e.clientY,
-        size: Math.random() * 8 + 12,
+        size: Math.random() * 18 + 18,
       };
 
       setSparkles((prev) => [...prev, newSparkle]);
@@ -67,8 +67,8 @@ export default function CursorTrail() {
           className="cursor-sparkle"
           style={{
             position: "absolute",
-            left: `${sparkle.x - sparkle.size / 2}px`,
-            top: `${sparkle.y - sparkle.size / 2}px`,
+            left: `${sparkle.x - sparkle.size / 3}px`,
+            top: `${sparkle.y - sparkle.size / 3}px`,
             pointerEvents: "none",
           }}
         >
