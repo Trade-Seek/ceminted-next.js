@@ -15,11 +15,6 @@ const tracks: Track[] = [
     file: "/waitlistMusic/0. 360 by Charli XCX.mp3",
   },
   {
-    title: "Location",
-    artist: "Dave, Burna Boy",
-    file: "/waitlistMusic/9. Location by Dave ft. Burna Boy.mp3",
-  },
-  {
     title: "Adore You",
     artist: "Fred Again",
     file: "/waitlistMusic/1. Adore you by Fred Again 4.mp3",
@@ -30,14 +25,14 @@ const tracks: Track[] = [
     file: "/waitlistMusic/2. Take me to your leader by Walker and Royce.mp3",
   },
   {
+    title: "Location",
+    artist: "Dave, Burna Boy",
+    file: "/waitlistMusic/3. Location by Dave ft. Burna Boy.mp3",
+  },
+  {
     title: "Pixelated Kisses",
     artist: "Joji",
     file: "/waitlistMusic/3. Pixelated kisses by Joji.mp3",
-  },
-  {
-    title: "Yellow",
-    artist: "Wisp",
-    file: "/waitlistMusic/4. Yellow (cover) by Wisp.mp3",
   },
   {
     title: "Лабиринт",
@@ -50,14 +45,24 @@ const tracks: Track[] = [
     file: "/waitlistMusic/6. Just Keep Watching (From F1® The Movie) by Tate Mcrae.mp3",
   },
   {
-    title: "Way of Life",
-    artist: "Unknown",
-    file: "/waitlistMusic/7. Way of Life by Brock Berrigan.mp3",
+    title: "105°C的你",
+    artist: "",
+    file: "/waitlistMusic/7. 热爱105°C的你 by 阿肆 .mp3",
   },
   {
     title: "We Stayed Up All Night",
     artist: "Unknown",
     file: "/waitlistMusic/8. We stayed up all night by Tourist.mp3",
+  },
+  {
+    title: "Etuede gis-Moll (La Campanella)",
+    artist: "Eugen Cicero",
+    file: "/waitlistMusic/9. Etuede gis-Moll (La Campanella) by Eugen Cicero.mp3",
+  },
+  {
+    title: "BAILE INOLVIDABLE",
+    artist: "Bad Bunny",
+    file: "/waitlistMusic/10. BAILE INoLVIDABLE by Bad Bunny 4.mp3",
   },
 ];
 

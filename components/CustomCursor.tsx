@@ -64,9 +64,7 @@ export default function CustomCursor() {
       aria-hidden="true"
     >
       <img
-        src={
-          isPointer ? "/cursors/coin-pointer.svg" : "/cursors/coin-default.svg"
-        }
+        src="/images/cursor.svg"
         alt=""
         width={32}
         height={32}

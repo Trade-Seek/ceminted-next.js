@@ -74,8 +74,8 @@ export default function Home() {
             <div className="center-text">
               <h1 className="hero-h1">WAITLIST SIGN UP</h1>
               <div className="hero-sub">
-                Connect to complex markets with increased privacy, so you can
-                trade more confidently and sustainably.
+                Connect to complex markets with increased privacy (darkpools),
+                so you can trade more confidently and sustainably.
               </div>
 
               <Image
@@ -113,13 +113,15 @@ export default function Home() {
           </div>
 
           <div className="upcoming">
-            <Image
-              className="card-prog-svg dating pixel-art"
-              src="/images/inProgressDating.svg"
-              alt="Dating app in progress"
-              width={840}
-              height={1000}
-            />
+            <div className="dating-card-container">
+              <Image
+                className="card-prog-svg dating pixel-art"
+                src="/images/inProgressDating.svg"
+                alt="Dating app in progress"
+                width={840}
+                height={1000}
+              />
+            </div>
 
             <Image
               className="card-prog-svg fashion pixel-art"
@@ -129,6 +131,16 @@ export default function Home() {
               height={1000}
             />
           </div>
+
+          {/* Dating survey button */}
+          <a
+            href="https://forms.gle/VAMzycQKLd4cMB5m9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dating-survey-button"
+          >
+            SURVEY HERE
+          </a>
 
           {/* Sticky notes below cards */}
           <Image

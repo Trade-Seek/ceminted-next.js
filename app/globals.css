@@ -398,6 +398,7 @@ body {
   position: relative;
   z-index: 2;
   overflow: visible;
+  padding-bottom: 80px;
 }
 
 .upcoming-header {
@@ -427,6 +428,46 @@ body {
   position: relative;
   justify-content: center;
   overflow: visible;
+}
+
+.dating-card-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dating-survey-button {
+  --font-size: 0.625rem;
+  position: absolute;
+  top: 330px;
+  left: 25%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 32px;
+  font-size: var(--font-size);
+  font-family: var(--pixel-font);
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.dating-survey-button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/pixel-button.svg");
+  background-size: 100% 100%;
+  background-position: center;
+  transform: translateY(calc(var(--font-size) * -0.15));
+  background-repeat: no-repeat;
 }
 .card-prog-svg {
   width: 436px;
