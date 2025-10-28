@@ -25,18 +25,13 @@ const tracks: Track[] = [
     file: "/waitlistMusic/2. Take me to your leader by Walker and Royce.mp3",
   },
   {
-    title: "Location",
-    artist: "Dave, Burna Boy",
-    file: "/waitlistMusic/3. Location by Dave ft. Burna Boy.mp3",
-  },
-  {
     title: "Pixelated Kisses",
     artist: "Joji",
     file: "/waitlistMusic/3. Pixelated kisses by Joji.mp3",
   },
   {
     title: "Лабиринт",
-    artist: "Unknown",
+    artist: "FACE",
     file: "/waitlistMusic/5. Лабиринт by FACE.mp3",
   },
   {
@@ -45,14 +40,14 @@ const tracks: Track[] = [
     file: "/waitlistMusic/6. Just Keep Watching (From F1® The Movie) by Tate Mcrae.mp3",
   },
   {
-    title: "105°C的你",
-    artist: "",
+    title: "热爱105°C的你",
+    artist: "阿肆",
     file: "/waitlistMusic/7. 热爱105°C的你 by 阿肆 .mp3",
   },
   {
-    title: "We Stayed Up All Night",
-    artist: "Unknown",
-    file: "/waitlistMusic/8. We stayed up all night by Tourist.mp3",
+    title: "Afterthought",
+    artist: "Tame Impala",
+    file: "/waitlistMusic/8. Afterthought by Tame Imapala.mp3",
   },
   {
     title: "Etuede gis-Moll (La Campanella)",

@@ -20,7 +20,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="top-right-button survey-button"
               >
-                SURVEY
+                SURVEY #1
               </a>
             </div>
 
@@ -139,7 +139,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="dating-survey-button"
           >
-            SURVEY HERE
+            SURVEY #2
           </a>
 
           {/* Sticky notes below cards */}

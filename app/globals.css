@@ -238,6 +238,7 @@ body {
   font-size: var(--font-size);
   font-family: var(--pixel-font);
   cursor: pointer;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -572,8 +573,12 @@ body {
 }
 
 .heart-btn {
-  font-size: 20px;
-  padding: 4px 6px;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transform: translateY(-4.5px);  
 }
 
 .heart-btn.favorited {
