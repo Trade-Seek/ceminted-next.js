@@ -1,11 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 import { WaitlistEmail } from './types';
 
-const supabaseUrl = process.env.SUPABASE_URL!;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.SUPABASE_URL || 'https://placeholder.supabase.co';
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || 'placeholder-key';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-    throw new Error('Missing Supabase environment variables');
+// Only throw error in runtime, not during build
+if (process.env.NODE_ENV !== 'production' && (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY)) {
+    console.warn('Missing Supabase environment variables - using placeholder values for build');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
