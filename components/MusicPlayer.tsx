@@ -27,7 +27,7 @@ const tracks: Track[] = [
   {
     title: "Pixelated Kisses",
     artist: "Joji",
-    file: "/waitlistMusic/3. Pixelated kisses by Joji.mp3",
+    file: "/waitlistMusic/4. Pixelated kisses by Joji.mp3",
   },
   {
     title: "Лабиринт",
