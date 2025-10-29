@@ -1031,8 +1031,8 @@ img.pixel-art {
     right: 16px;
     transform: none;
     bottom: 16px;
-    height: 200px;
-    flex-wrap: wrap;
+    height: auto;
+    flex-wrap: nowrap;
     justify-content: center;
   }
 
