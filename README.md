@@ -1,4 +1,4 @@
-# Ceminted is creating a system to make connections online more meaningful.
+## Ceminted is creating a system to make connections online more meaningful.
 
 ## Trade & Seek
 Our goal is to enable private executions with guided liquidity that scales sustainability, connecting institutions and everyday people to complex markets.
