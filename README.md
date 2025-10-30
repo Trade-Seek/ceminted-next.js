@@ -1,18 +1,72 @@
-# 🚀 Ceminted Next.js - Modern Trading Platform Landing Page
+# Ceminted is creating a system to make connections online more meaningful.
 
-A beautiful, pixel-art themed landing page with waitlist functionality built with **Next.js 15**, **TypeScript**, and **Supabase**.
+## Trade & Seek
+Our goal is to enable private executions with guided liquidity that scales sustainability, connecting institutions and everyday people to complex markets.
 
-## ✨ Features
+## Overview
+Many people are hesitant to jump into crypto because of the risks and lack of privacy. Data monopolies, automated market makers, and order books expose every trade.
 
-- ⚡ **Next.js 15** with App Router
-- 🔷 **TypeScript** for type safety
-- 🎨 **Pixel art aesthetic** with custom CSS
-- 📧 **Email waitlist** with Supabase backend
-- 🛡️ **Rate limiting** to prevent spam (5 requests/hour per IP)
-- 📱 **Fully responsive** design (mobile, tablet, desktop)
-- 🚀 **Production-ready** with proper error handling
-- 🎯 **SEO optimized** with metadata API
-- 🔐 **Secure** environment variable handling
+## Features 
+- Private transactions on Solana
+- Anonymous spot and perpetuals trading
+- Simpler UX with Privy
+- Arcium privacy layer
+- Trading engine integration with autonomous order book
+- Time locked buys
+- Guided liquidity mode with risk management
+- Trade summaries and coaching
+
+## Flow
++-------------------+       +---------------------+       +-------------------+
+|     User          |       |     Frontend   |       |   Privy Wallet    |
+| (Browser)  |       |          (React dApp)    |       |  (Login & Sign)   |
++-------------------+       +---------------------+       +-------------------+
+          |                            |                            |
+          | Connect & Trade Input      |                            |
+          v                            | Encrypt Order (Client-Side)|
+                                       v                            |
+                            +---------------------+                 |
+                            | Encrypted Payload   |                 |
+                            | (AES + Arcium SDK)  |                 |
+                            +---------------------+                 |
+                                       |                            |
+                                       | Send via HTTPS/Websocket   |
+                                       v                            |
+                            +---------------------+                 |
+                            |  Backend       |<----------------+ Sign Tx if Needed
+                            | (Rust Coordinator)  |
+                            +---------------------+
+                                       |
+                                       | Validate (Margin, Risk, Oracle Pull)
+                                       v
+                            +---------------------+
+                            | Arcium MPC Layer    |
+                            | (Private Matching)  |
+                            +---------------------+
+                                       |
+                                       | Return ZK-Proof / Match
+                                       v
+                            +---------------------+
+                            | Backend Triggers   |
+                            | (Verify Proof)     |
+                            +---------------------+
+          /                    |                    \
+         /                     |                     \
+        v                      v                      v
++-------------------+ +---------------------+ +-------------------+
+| Drift Protocol    | | Titan Router       | | Solana Settlement |
+| (Perps: Positions,| | (Spot: Swaps,      | | (Anchor Contracts)|
+|  Funding, Liqs)   | |  Collateral Conv.) | | (Vault Updates,   |
++-------------------+ +---------------------+ |  Events Emission) |
+                                              +-------------------+
+                                                       |
+                                                       | Encrypted Payout / Sync
+                                                       v
+                                              +-------------------+
+                                              | User UI Update   |
+                                              | (Real-Time PNL)  |
+                                              +-------------------+
+
 
 ## 📁 Project Structure
 
