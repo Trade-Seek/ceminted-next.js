@@ -96,8 +96,6 @@ ceminted-next.js/
 
 ## Built With
 
-## 🧩 Built With
-
 - **React + Vite + TypeScript** — Frontend app with a smooth, minimal UI  
 - **Privy SDK** — Pseudonymous login + wallet abstraction (no seed phrases)  
 - **Arcium SDK (MPC + AES)** — Private trade encryption and darkpool matching  
