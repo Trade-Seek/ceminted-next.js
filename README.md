@@ -16,7 +16,59 @@ Many people are hesitant to jump into crypto because of the risks and lack of pr
 - Guided liquidity mode with risk management
 - Trade summaries and coaching
 
-## Flow
+## Architecture
+## ⚙️ Trade & Seek System Architecture
+
+```text
++-------------------+       +---------------------+       +-------------------+
+|       User        |       |     Frontend        |       |   Privy Wallet    |
+|     (Browser)     |       |     (React dApp)    |       |  (Login & Sign)   |
++-------------------+       +---------------------+       +-------------------+
+          |                            |                            |
+          | Connect & Trade Input      |                            |
+          v                            | Encrypt Order (Client-Side)|
+                                       v                            |
+                            +---------------------+                 |
+                            | Encrypted Payload   |                 |
+                            | (AES + Arcium SDK)  |                 |
+                            +---------------------+                 |
+                                       |                            |
+                                       | Send via HTTPS/Websocket   |
+                                       v                            |
+                            +---------------------+                 |
+                            |  Backend            |<----------------+ Sign Tx if Needed
+                            | (Rust Coordinator)  |
+                            +---------------------+
+                                       |
+                                       | Validate (Margin, Risk, Oracle Pull)
+                                       v
+                            +---------------------+
+                            | Arcium MPC Layer    |
+                            | (Private Matching)  |
+                            +---------------------+
+                                       |
+                                       | Return ZK-Proof / Match
+                                       v
+                            +---------------------+
+                            | Backend Triggers    |
+                            | (Verify Proof)      |
+                            +---------------------+
+          /                    |                    \
+         /                     |                     \
+        v                      v                      v
++-------------------+ +---------------------+ +-------------------+
+| Drift Protocol    | | Titan Router       | | Solana Settlement |
+| (Perps: Positions,| | (Spot: Swaps,      | | (Anchor Contracts)|
+|  Funding, Liqs)   | |  Collateral Conv.) | | (Vault Updates,   |
++-------------------+ +---------------------+ |  Events Emission) |
+                                              +-------------------+
+                                                       |
+                                                       | Encrypted Payout / Sync
+                                                       v
+                                              +-------------------+
+                                              | User UI Update    |
+                                              | (Real-Time PNL)   |
+                                              +-------------------+
 
 
 
