@@ -1,9 +1,13 @@
-## Ceminted is creating a system to make connections online more meaningful.
+# Ceminted
+
+Creating a system to make connections online more meaningful.
 
 ## Trade & Seek
+
 Our goal is to enable private executions with guided liquidity that scales sustainability, connecting institutions and everyday people to complex markets.
 
-## Features 
+## Features
+
 - Private transactions on Solana
 - Anonymous spot and perpetuals trading
 - Simpler UX with Privy
@@ -14,9 +18,10 @@ Our goal is to enable private executions with guided liquidity that scales susta
 - Trade summaries and coaching
 
 ## Architecture
-## ⚙️ Trade & Seek System Architecture
 
+⚙️ **Trade & Seek System Architecture**
 
+```
 +-------------------+       +---------------------+       +-------------------+
 |       User        |       |     Frontend        |       |   Privy Wallet    |
 |     (Browser)     |       |     (React dApp)    |       |  (Login & Sign)   |
@@ -66,11 +71,11 @@ Our goal is to enable private executions with guided liquidity that scales susta
                                               | User UI Update    |
                                               | (Real-Time PNL)   |
                                               +-------------------+
-
-
+```
 
 ## Project Structure
 
+```
 ceminted-next.js/
 ├── app/
 │   ├── api/
@@ -92,20 +97,16 @@ ceminted-next.js/
 ├── next.config.js                # Next.js configuration
 ├── tsconfig.json                 # TypeScript configuration
 └── package.json                  # Dependencies
-
+```
 
 ## Built With
 
-- **React + Vite + TypeScript** — Frontend app with a smooth, minimal UI  
-- **Privy SDK** — Pseudonymous login + wallet abstraction (no seed phrases)  
-- **Arcium SDK (MPC + AES)** — Private trade encryption and darkpool matching  
-- **Rust (Anchor + Solana SDK)** — Smart contracts and PDA coordination  
-- **Drift Protocol SDK** — Perpetuals engine and liquidity management  
-- **TailwindCSS + Framer Motion** — Modern animated UI and styling  
-- **Vercel + Cloudflare** — Frontend hosting and edge routing  
-- **PostgreSQL + Redis** — Off-chain caching and proof validation layer  
-
-
-
-
+- **React + Vite + TypeScript** — Frontend app with a smooth, minimal UI
+- **Privy SDK** — Pseudonymous login + wallet abstraction (no seed phrases)
+- **Arcium SDK (MPC + AES)** — Private trade encryption and darkpool matching
+- **Rust (Anchor + Solana SDK)** — Smart contracts and PDA coordination
+- **Drift Protocol SDK** — Perpetuals engine and liquidity management
+- **TailwindCSS + Framer Motion** — Modern animated UI and styling
+- **Vercel + Cloudflare** — Frontend hosting and edge routing
+- **PostgreSQL + Redis** — Off-chain caching and proof validation layer
 
