@@ -950,9 +950,10 @@ img.pixel-art {
   }
 
   .note-1 {
-    width: 260px;
-    height: 160px;
-    right: -280px;
+    width: 0px;
+    height: 0px;
+    right: 0px;
+    bottom: 0px;
   }
 
   .note-2 {
@@ -1084,21 +1085,6 @@ img.pixel-art {
     order: 4;
     max-width: 120px;
     gap: 6px;
-  }
-
-  .volume-slider {
-    width: 80px;
-    height: 4px;
-  }
-
-  .volume-slider::-webkit-slider-thumb {
-    width: 14px;
-    height: 14px;
-  }
-
-  .volume-slider::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
   }
 
   .volume-icon {
